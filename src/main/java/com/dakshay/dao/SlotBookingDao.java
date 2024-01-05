@@ -28,11 +28,10 @@ public class SlotBookingDao {
             if (slotBookingRequest.getEndTime().compareTo(slot.getStartTime()) > 0 && slotBookingRequest.getStartTime().compareTo(slot.getEndTime()) < 0)
                 canBookSlot = false;
         }
-        if (canBookSlot) addSlot(slotBookingRequest);
         return canBookSlot;
     }
 
-    private void addSlot(SlotBooking slotBookingRequest) {
+    public void addSlot(SlotBooking slotBookingRequest) {
         slotBookings.add(slotBookingRequest);
     }
 
